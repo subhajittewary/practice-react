@@ -1,13 +1,49 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container {
+  display: flex;
+  flex-direction: row;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.rating-item {
+  cursor: pointer;
+  transition: color 0.2s;
+  font-size: 2rem;
+}
+
+.rating-item.yellow {
+  color: yellow;
+}
+
+.rating-item.gray {
+  color: gray;
+}
+
+
+.tooltip-container {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%; /* Position the tooltip above the element */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%; /* Arrow at the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
 }
