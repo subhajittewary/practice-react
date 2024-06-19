@@ -9,16 +9,16 @@ import Tooltip from "./Tooltip";
 function App() {
   return (
     <div className="App">
-      <h1>Rating Component</h1>
+      {/* <h1>Rating Component</h1>
       <Rating defRatings={2} totalRatings={5} />
       <Rating defRatings={5} totalRatings={20} />
       <Tooltip tooltipText="You have hovered over me" width="200px">
         <button>Hover me</button>
-      </Tooltip>
+      </Tooltip> */}
       <TodoList/>
-      <Login/>
+      {/* <Login/>
       <MyComponent/>
-      <Context/>
+      <Context/> */}
     </div>
   );
 }

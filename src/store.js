@@ -1,11 +1,13 @@
 import { combineReducers, createStore } from "redux";
+import { FETCH_TODOS_SUCCESS } from "./actions";
+import { applyMiddleware } from "redux";
+import { thunk } from "redux-thunk";
 const initialState = {
     todos: []
   };
-const todosReducer = (state=initialState, action) => {
-
+export const todosReducer = (state=initialState, action) => {
     switch (action.type) {
-        case "FETCH_SUCCESS": {
+        case FETCH_TODOS_SUCCESS: {
             console.log("state update--->", action)
             return {
                 ...state,
@@ -20,5 +22,5 @@ const todosReducer = (state=initialState, action) => {
 
 const rootReducer = combineReducers({todos: todosReducer})
 
- const store = createStore(rootReducer)
+ const store = createStore(rootReducer, applyMiddleware(thunk))
  export default store;
